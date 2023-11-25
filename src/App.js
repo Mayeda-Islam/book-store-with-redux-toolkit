@@ -4,9 +4,9 @@ import React from "react";
 import Video from "./pages/Video";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import Main from "./layout/Main";
+import Main from "../src/layout/Main";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
@@ -22,6 +22,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 function App() {
   return (
     <>
