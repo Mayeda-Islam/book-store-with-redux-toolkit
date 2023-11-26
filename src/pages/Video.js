@@ -21,10 +21,7 @@ const Video = () => {
   }, [dispatch, videoId]);
 
   const { link, title, id, tags } = video || {};
-  console.log({
-    link,
-    title,
-  });
+
   let content;
   if (isLoading) {
     content = <Loading />;
