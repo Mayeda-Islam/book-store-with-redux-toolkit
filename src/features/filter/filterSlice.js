@@ -13,7 +13,6 @@ const filterSlice = createSlice({
     },
     tagRemove: (state, action) => {
       const currentIndex = state.tags.indexOf(action.payload);
-      console.log(currentIndex);
       if (currentIndex !== -1) {
         state.tags.splice(currentIndex, 1);
       }

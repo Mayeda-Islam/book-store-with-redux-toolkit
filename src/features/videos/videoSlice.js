@@ -9,13 +9,16 @@ const initialState = {
   error: "",
 };
 //async thunk
-export const fetchVideos = createAsyncThunk("videos/fetchVideos", async () => {
-  const videos = await getVideos();
-  return videos;
-});
+export const fetchVideos = createAsyncThunk(
+  "videos/fetchVideos",
+  async ({ tags, search }) => {
+    const videos = await getVideos(tags, search);
+    return videos;
+  }
+);
 
 //slice
-const videoSlice = createSlice({
+const videosSlice = createSlice({
   name: "videos",
   initialState,
   extraReducers: (builder) => {
@@ -36,4 +39,4 @@ const videoSlice = createSlice({
       });
   },
 });
-export default videoSlice.reducer;
+export default videosSlice.reducer;

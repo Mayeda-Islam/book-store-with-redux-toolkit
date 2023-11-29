@@ -5,6 +5,7 @@ import { fetchVideos } from "../../features/videos/videoSlice";
 import Loading from "../ui/Loading";
 
 const VideoGrid = () => {
+  const { search, tags } = useSelector((state) => state.filter);
   const dispatch = useDispatch();
   //state
   const { videos, isLoading, isError, error } = useSelector(
@@ -12,8 +13,8 @@ const VideoGrid = () => {
   );
   //dispatch the action and render render dispatch every time the ui refresh
   useEffect(() => {
-    dispatch(fetchVideos());
-  }, [dispatch]);
+    dispatch(fetchVideos({ tags, search }));
+  }, [dispatch, tags, search]);
   let content;
   if (isLoading) {
     content = <Loading />;

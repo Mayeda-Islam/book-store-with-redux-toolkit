@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import videosReducer from "../features/videos/videoSlice";
 import tagsReducer from "../features/tags/tagsSlice";
+import videosReducer from "../features/videos/videoSlice";
 import videoReducer from "../features/video/videoSlice";
 import relatedVideosReducer from "../features/relatedVideos/relatedVideosSlice";
 import filterReducer from "../features/filter/filterSlice";
